@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Slab", serif;
+  background-color: #f7f2e9;
+}
+#root {
+  background-image: url("https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"),
+    url("https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80");
+  background-repeat: no-repeat;
+  background-position: right -180px top, left -180px top;
+  max-height: 100vh;
+  overflow: auto;
+}
+h1,
+p,
+h3 {
+  margin-bottom: 7px;
+}
+h1 {
+  font-size: 38px;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+.header {
+  max-width: 483px;
+  margin: 0 auto 40px;
+  color: white;
+}
+img {
+  max-width: 100%;
+}
+.menu-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  gap: 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+.text-center {
+  text-align: center;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pizza-container {
+  max-width: 430px;
+  cursor: pointer;
+  padding: 7px;
+  background-color: white;
+  border-radius: 25px;
+  font-family: "Roboto Mono", monospace;
+  box-shadow: 4px 4px 0px 0 rgba(0, 0, 0, 0.6);
+  transition: all 1s ease;
+}
+.pizza-container:hover {
+  transform: scale(102%);
+}
+.image-container,
+.content-container {
+  width: 48%;
+}
+.image {
+  border-radius: 25px;
 }
