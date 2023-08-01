@@ -2,6 +2,39 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+const data = [
+  {
+    image: "https://fast-react-pizza-menu.netlify.app/pizzas/focaccia.jpg",
+    pizzaName: "Focaccia",
+    recipe: "Bread with italian olive oil and rosemary",
+  },
+  {
+    image: "https://fast-react-pizza-menu.netlify.app/pizzas/margherita.jpg",
+    pizzaName: "Pizza Margherita",
+    recipe: "Tomato and mozzarella",
+  },
+  {
+    image: "https://fast-react-pizza-menu.netlify.app/pizzas/spinaci.jpg",
+    pizzaName: "Pizza spinaci",
+    recipe: "Tomato, mozarella, spinach, and ricotta cheese",
+  },
+  {
+    image: "https://fast-react-pizza-menu.netlify.app/pizzas/funghi.jpg",
+    pizzaName: "Pizza Funghi",
+    recipe: "Tomato, mozarella, mushrooms, and onion",
+  },
+  {
+    image: "https://fast-react-pizza-menu.netlify.app/pizzas/Salamino.jpg",
+    pizzaName: "Pizza Salamino",
+    recipe: "Tomato, mozarella, and pepperoni",
+  },
+  {
+    image: "https://fast-react-pizza-menu.netlify.app/pizzas/Prosciutto.jpg",
+    pizzaName: "Pizza Prosciutto",
+    recipe: "Tomato, mozarella, ham, aragula, and burrata cheese",
+  },
+];
+
 function App() {
   return (
     <div>
@@ -14,48 +47,21 @@ function Menu() {
   return (
     <div className="menu-container">
       <Header />
-      <Pizza
-        image="https://fast-react-pizza-menu.netlify.app/pizzas/focaccia.jpg"
-        pizzaName="Focaccia"
-        recipe="Bread with italian olive oil and rosemary"
-      />
-      <Pizza
-        image="https://fast-react-pizza-menu.netlify.app/pizzas/margherita.jpg"
-        pizzaName="Pizza Margherita"
-        recipe="Tomato and mozzarella"
-      />
-      <Pizza
-        image="https://fast-react-pizza-menu.netlify.app/pizzas/spinaci.jpg"
-        pizzaName="Pizza spinaci"
-        recipe="Tomato, mozarella, spinach, and ricotta cheese"
-      />
-      <Pizza
-        image="https://fast-react-pizza-menu.netlify.app/pizzas/funghi.jpg"
-        pizzaName="Pizza Funghi"
-        recipe="Tomato, mozarella, mushrooms, and onion"
-      />
-      <Pizza
-        image="https://fast-react-pizza-menu.netlify.app/pizzas/Salamino.jpg"
-        pizzaName="Pizza Salamino"
-        recipe="Tomato, mozarella, and pepperoni"
-      />
-      <Pizza
-        image="https://fast-react-pizza-menu.netlify.app/pizzas/Prosciutto.jpg"
-        pizzaName="Pizza Prosciutto"
-        recipe="Tomato, mozarella, ham, aragula, and burrata cheese"
-      />
+      {data.map((card) => (
+        <Pizza argsObj={card} key={card.pizzaName} />
+      ))}
     </div>
   );
 }
-function Pizza(dict) {
+function Pizza({ argsObj }) {
   return (
     <div className="row pizza-container">
       <div className="image-container">
-        <img className="image" src={dict.image} alt={dict.pizzaName} />
+        <img className="image" src={argsObj.image} alt={argsObj.pizzaName} />
       </div>
       <div className="content-container">
-        <h3>{dict.pizzaName}</h3>
-        <p>{dict.recipe}</p>
+        <h3>{argsObj.pizzaName}</h3>
+        <p>{argsObj.recipe}</p>
       </div>
     </div>
   );
